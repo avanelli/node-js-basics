@@ -1,0 +1,32 @@
+{
+  "name": "node-js-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap",
+    "test:coverage": "tap --coverage-report=lcov",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avanelli/node-js-basics.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Andrea Vanelli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avanelli/node-js-basics/issues"
+  },
+  "homepage": "https://github.com/avanelli/node-js-basics#readme",
+  "devDependencies": {
+    "standard": "^17.0.0",
+    "supertest": "^6.3.0",
+    "tap": "^16.3.0"
+  },
+  "tap": {
+    "coverage-map": "map.js"
+  }
+}
