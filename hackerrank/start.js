@@ -20,7 +20,7 @@ const run = async () => {
       const response = algo.main(testData)
       // TODO write reponse to file
       const expectedFile = file.replace('input', 'expected')
-      const expectedRes = await fs.readFile(expectedFile, 'utf8')
+      const expectedRes = (await fs.readFile(expectedFile, 'utf8')).replaceAll(/\r?\n|\r/g, '\n')
       if (expectedRes === response) {
         console.log(`OK test ${basename(file)}`)
       } else {
