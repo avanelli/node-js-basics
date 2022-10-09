@@ -10,8 +10,9 @@ const fsUtils = {
   * @returns {Promise}
   */
   async readFileContentBuffer (filename) {
-    const file = await fs.open(filename, 'r')
+    let file
     try {
+      file = await fs.open(filename, 'r')
       const {
         bytesRead,
         buffer
@@ -21,7 +22,7 @@ const fsUtils = {
     } catch (err) {
       throw new Error(err.message)
     } finally {
-      if (file !== undefined) {
+      if (typeof file !== 'undefined') {
         await file.close()
       }
     }
@@ -31,13 +32,14 @@ const fsUtils = {
     const list = []
     const dir = await fs.opendir(path)
     for await (const ent of dir) {
-      if (ent.name.startsWith('.')) { continue }
+      // if (ent.name.startsWith('.')) { continue }
       if (ent.isFile() && ent.name.endsWith(pattern)) {
         list.push(resolve(dir.path, ent.name))
       }
     }
     return list
   }
+
 }
 
 module.exports = fsUtils
