@@ -17,7 +17,7 @@ const run = async () => {
     const testFiles = await fileUtils.scanDir(resolve(dirname(fileName), 'test-files'), 'input.txt')
     for (const file of testFiles) {
       const testData = await fs.readFile(file, 'utf8')
-      const response = await algo.main(testData)
+      const response = algo.main(testData)
       // TODO write reponse to file
       const expectedFile = file.replace('input', 'expected')
       const expectedRes = await fs.readFile(expectedFile, 'utf8')
