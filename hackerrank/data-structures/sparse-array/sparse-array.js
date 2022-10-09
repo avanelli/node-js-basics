@@ -1,5 +1,5 @@
 /**
- * https://www.hackerrank.com/challenges/2d-array/problem
+ * https://www.hackerrank.com/challenges/sparse-arrays/problem
  */
 
 /**
