@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs').promises
-const { resolve, dirname } = require('path')
+const { resolve, dirname, basename } = require('path')
 const fileUtils = require('../fs/fs-utils')
 
 const run = async () => {
@@ -22,9 +22,9 @@ const run = async () => {
       const expectedFile = file.replace('input', 'expected')
       const expectedRes = await fs.readFile(expectedFile, 'utf8')
       if (expectedRes === response) {
-        console.log('test x OK')
+        console.log(`OK test ${basename(file)}`)
       } else {
-        console.log('!!! test x KO. Your response:')
+        console.log(`!!! KO test ${basename(file)}. Your response:`)
         console.log(response)
         console.log('*** Expected')
         console.log(expectedRes)
