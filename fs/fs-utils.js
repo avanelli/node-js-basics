@@ -27,12 +27,18 @@ const fsUtils = {
       }
     }
   },
-
+  /**
+  * Read files list using pattern
+  * @param {string} path
+  * @param {string} pattern
+  * @returns {Promise} Promise: array of files found
+  */
   async scanDir (path, pattern) {
     const list = []
     const dir = await fs.opendir(path)
     for await (const ent of dir) {
       // if (ent.name.startsWith('.')) { continue }
+      // TODO use regex
       if (ent.isFile() && ent.name.endsWith(pattern)) {
         list.push(resolve(dir.path, ent.name))
       }
