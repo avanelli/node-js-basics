@@ -27,8 +27,8 @@ const main = (testData) => {
 }
 
 /**
- *
- * @param {array} numbers
+ * @param {array} strings
+ * @param {array} queries
  */
 const solve = (strings, queries) => {
   // optimize strings with map
