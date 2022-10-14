@@ -3,7 +3,7 @@
  * https://www.hackerrank.com/challenges/merge-two-sorted-linked-lists/problem
  */
 
-const { SinglyLinkedList } = require('../util/singlyLinkedList')
+const { SinglyLinkedList, printLinkedList } = require('../util/singlyLinkedList')
 
 /**
  * @param {string} testData
@@ -19,14 +19,12 @@ const main = (testData) => {
   for (let i = 0; i < numTests; i++) {
     let numLinkedL1 = parseInt(iterator.next().value)
     for (const row of iterator) {
-      console.log(row)
       lList1.insertNode(parseInt(row))
       if (--numLinkedL1 === 0) break
     }
 
     let numLinkedL2 = parseInt(iterator.next().value)
     for (const row of iterator) {
-      console.log(row)
       lList2.insertNode(parseInt(row))
       if (--numLinkedL2 === 0) break
     }
@@ -66,18 +64,6 @@ const solve = (head1, head2) => {
     }
   }
   return linkedListRes.head
-}
-
-/**
- * @param {require('../util/singlyLinkedList').SinglyLinkedListNode} head1
- */
-const printLinkedList = (node) => {
-  let res = ''
-  while (node != null) {
-    res += node.data + ' '
-    node = node.next
-  }
-  return res
 }
 
 module.exports = { main }
