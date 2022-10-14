@@ -22,4 +22,16 @@ function SinglyLinkedList (head = null, tail = null) {
   return this
 }
 
-module.exports = { SinglyLinkedListNode, SinglyLinkedList }
+/**
+ * @param {SinglyLinkedListNode} head1
+ */
+const printLinkedList = (node) => {
+  let res = ''
+  while (node != null) {
+    res += node.data + ' '
+    node = node.next
+  }
+  return res
+}
+
+module.exports = { SinglyLinkedListNode, SinglyLinkedList, printLinkedList }
